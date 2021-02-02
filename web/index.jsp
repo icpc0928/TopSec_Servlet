@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Welcome</title>
   </head>
   <body>
-  $END$HI
+  你好這裡是教學頁面
+  <button onclick="myFunction()">Click me</button>
+
   </body>
+  <script>
+    function myFunction(){
+      // document.getElementById("")
+      window.location.href = "https://leo0928.synology.me:226/leo01/Leo17"
+    }
+  </script>
 </html>
