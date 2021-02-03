@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/square.css">
+</head>
+<body>
+
+    <div class="square">
+        <table class="square-inner table">
+            <tbody>
+            <tr>
+                <td id='td1'>1</td>
+                <td id='td2'>2</td>
+                <td id='td3'>3</td>
+            </tr>
+            <tr>
+                <td id='td4'>4</td>
+                <td id='td5'>5</td>
+                <td id='td6'>6</td>
+            </tr>
+            <tr>
+                <td id='td7'>7</td>
+                <td id='td8'>8</td>
+                <td id='td9'>9</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <form action="" method="get">
+        <input type="submit" value="送出" onclick="send()">
+    </form>
+
+
+</body>
+<script>
+
+    let color1=0, color2=0, color3=0, color4=0, color5=0, color6=0, color7=0, color8=0, color9 = 0;
+    const colors1 = ["red", "orange", "blue", "yellow"];
+    const colors2 = ["red", "orange"];
+    const td1 = document.getElementById('td1');
+    const td2 = document.getElementById('td2');
+    const td3 = document.getElementById('td3');
+    const td4 = document.getElementById('td4');
+    const td5 = document.getElementById('td5');
+    const td6 = document.getElementById('td6');
+    const td7 = document.getElementById('td7');
+    const td8 = document.getElementById('td8');
+    const td9 = document.getElementById('td9');
+
+    td1.addEventListener('click', function(){
+       color1 = (color1 + 1) % colors1.length;
+       this.style.backgroundColor = colors1[color1];
+    });
+
+    td2.addEventListener('click', function(){
+        color2 = (color2 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color2];
+    });
+    td3.addEventListener('click', function(){
+        color3 = (color3 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color3];
+    });
+    td4.addEventListener('click', function(){
+        color4 = (color4 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color4];
+    });
+    td5.addEventListener('click', function(){
+        color5 = (color5 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color5];
+    });
+    td6.addEventListener('click', function(){
+        color6 = (color6 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color6];
+    });
+    td7.addEventListener('click', function(){
+        color7 = (color7 + 1) % colors1.length;
+        this.style.backgroundColor = colors2[color7];
+    });
+    td8.addEventListener('click', function(){
+        color8 = (color8 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color8];
+    });
+    td9.addEventListener('click', function(){
+        color9 = (color9 + 1) % colors1.length;
+        this.style.backgroundColor = colors1[color9];
+    });
+
+    function reqListener(){
+        console.log(this.responseText);
+    }
+
+    function send(){
+        console.log("send: " + color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9);
+        var answer = "" + color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9;
+
+        let url = "https://leo0928.synology.me:226/TopSec/Servlet03";
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            //body將json轉字串送出
+            body: JSON.stringify({
+                "answer": answer
+            })
+        }).then((response) => {
+            return response.json();
+        }).then((jsonData) => {
+            console.log(jsonData);
+        }).catch((err) => {
+            console.log("Error: " , err)
+        })
+    }
+
+
+</script>
+</html>

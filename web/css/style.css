@@ -1,0 +1,22 @@
+div{
+    font-size: 60px;
+    background: yellow;
+}
+h1{
+    font-size: 100px;
+    color:blue;
+}
+
+
+@media (max-width: 1000px) {
+    div{
+        font-size: 200px;
+        color: red;
+    }
+
+    h1{
+        font-size: 200px;
+        color: red;
+    }
+}
+

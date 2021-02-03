@@ -10,15 +10,17 @@
   <head>
     <title>Welcome</title>
   </head>
-  <body>
-  你好這裡是教學頁面
+  <input>
+  這裡是教學頁面共分三頁
+  <input type="button" onclick="location.href = 'https://leo0928.synology.me:226/leo01/Leo017'" value="下一頁"/>
+
   <button onclick="myFunction()">Click me</button>
 
   </body>
   <script>
     function myFunction(){
       // document.getElementById("")
-      window.location.href = "https://leo0928.synology.me:226/leo01/Leo17"
+      window.location.href = "test02.html"
     }
   </script>
 </html>
